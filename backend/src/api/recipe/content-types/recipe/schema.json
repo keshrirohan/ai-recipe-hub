@@ -1,0 +1,99 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipes",
+  "info": {
+    "singularName": "recipe",
+    "pluralName": "recipes",
+    "displayName": "Recipe"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "cuisine": {
+      "type": "enumeration",
+      "enum": [
+        "italian",
+        "chinese",
+        "mexican",
+        "indian",
+        "american",
+        "thai",
+        "japanese",
+        "mediterranean",
+        "french",
+        "korean",
+        "vietnamese",
+        "spanish",
+        "greek",
+        "turkish",
+        "moroccan",
+        "brazilian",
+        "caribbean",
+        "middle - eastern",
+        "british",
+        "german",
+        "portuguese",
+        "other"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "snack",
+        "dessert"
+      ]
+    },
+    "ingredient": {
+      "type": "json",
+      "required": true
+    },
+    "instruction": {
+      "type": "json",
+      "required": true
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "ispublic": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "recipes"
+    },
+    "prepTime": {
+      "type": "integer"
+    },
+    "cookTime": {
+      "type": "integer"
+    },
+    "serving": {
+      "type": "integer"
+    },
+    "nutrients": {
+      "type": "json"
+    },
+    "tips": {
+      "type": "json"
+    },
+    "subsitution": {
+      "type": "json"
+    }
+  }
+}
